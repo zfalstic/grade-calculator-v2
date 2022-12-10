@@ -13,7 +13,9 @@ export default function App() {
   return (
     <div>
       <Routes>
-        <Route path='/' element={<Layout />}>
+
+        ?I hate how brute force this solution is
+        <Route path='/grade-calculator-v2' element={<Layout />}>
           <Route index element={<Home />} />
           <Route path='average' element={<Average />} />
           <Route path='final' element={<Final />} />
