@@ -1,7 +1,7 @@
 import React from 'react';
-import './Welcome.css'
+import './Home.css'
 
-export default function Welcome () {
+export default function Home() {
   return (
     <div className='WelcomeText'>
       <div className='WelcomeText-big'>

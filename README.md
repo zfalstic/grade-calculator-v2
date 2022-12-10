@@ -1,3 +1,3 @@
 yes
 
-# https://zfalstic.github.io/grade-calculator-v2
+# https://zfalstic.github.io/grade-calculator-v2/
