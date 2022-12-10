@@ -1,7 +1,6 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 
-import Layout from './components/Layout';
 import NoMatch from './components/NoMatch';
 import Home from './pages/Home';
 import Average from './pages/Average';
@@ -15,7 +14,7 @@ export default function App() {
       <Routes>
 
         ?I hate how brute force this solution is
-        <Route path='/grade-calculator-v2' element={<Layout />}>
+        <Route path='/grade-calculator-v2'>
           <Route index element={<Home />} />
           <Route path='average' element={<Average />} />
           <Route path='final' element={<Final />} />

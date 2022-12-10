@@ -1,3 +1,46 @@
+button {
+  padding: 5px min(15px, 1vw);
+  width: 100%;
+
+  font-family: monospace;
+  font-size: min(20px, 2vw);
+
+  background-color: #00ADB5;
+  color: #393E46;
+  
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.NavContainer {
+  margin: min(20px, 5vw);
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px
+}
+
+.NavButton {
+  display:flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.NavText {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+
+  text-align: center;
+  font-family: monospace;
+
+  font-size: min(20px, 2vw);
+  color: #393E46;
+}
+
 .WelcomeText {
   margin: auto;
   width: 80%;
@@ -15,3 +58,4 @@
   font-size: min(15px, 2vw);
   color: #393E46;
 }
+
