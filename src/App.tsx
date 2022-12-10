@@ -1,13 +1,23 @@
 import React from 'react';
-import './App.css';
+import { Route, Routes, Navigate } from 'react-router-dom'
 
-import Welcome from './components/Welcome'
+import Welcome from './pages/Welcome'
+import Average from './pages/Average'
+import Final from './pages/Final'
+
+import './App.css';
 
 function App() {
   return (
-    <div className="container">
-      <Welcome />
-    </div>
+    <>
+      <Navigate to="/" />
+
+      <Routes>
+        <Route path='/' element={<Welcome />} />
+        <Route path='/average' element={<Average />} />
+        <Route path='/final' element={<Final />} />
+      </Routes>
+    </>
   );
 }
 
