@@ -7,13 +7,13 @@ export default function Layout() {
       <nav>
         <ul>
           <li>
-            <Link to='/'>Home</Link>
+            <Link to='/grade-calculator-v2'>Home</Link>
           </li>
           <li>
-            <Link to='/average'>Average</Link>
+            <Link to='/grade-calculator-v2/average'>Average</Link>
           </li>
           <li>
-            <Link to='/final'>Final</Link>
+            <Link to='/grade-calculator-v2/final'>Final</Link>
           </li>
         </ul>
 
