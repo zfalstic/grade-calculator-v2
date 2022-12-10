@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 import './Welcome.css'
 
 export default function Welcome () {
   return (
-    <div className="WelcomeText">
+    <div className='WelcomeText'>
       <div className='WelcomeText-big'>
         <p>Welcome to <em>this</em> grade calculator</p>
       </div>
