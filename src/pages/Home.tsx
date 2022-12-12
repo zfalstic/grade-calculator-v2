@@ -20,8 +20,8 @@ export default function Home() {
           <p>If you want to calculate what you need to make on your final to hit a target grade</p>
         </div>
         <div className='NavButton'>
-          <Link to='/grade-calculator-v2/average'><button>Class Average Calculator</button></Link>
-          <Link to='/grade-calculator-v2/final'><button>Final Calculator</button></Link>
+          <Link to='/grade-calculator-v2/average'><button className='ActualNavButton'>Class Average Calculator</button></Link>
+          <Link to='/grade-calculator-v2/final'><button className='ActualNavButton'>Final Calculator</button></Link>
         </div>        
       </div>
     </div>
