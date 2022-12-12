@@ -1,4 +1,72 @@
-.ActualNavButton {
+.welcome {
+  margin-top: 10vw;
+  margin-left: 10vw;
+  margin-right: 10vw;
+
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 80%;
+}
+
+.welcome__text {
+  text-align: center;
+  font-family: monospace;
+}
+
+.welcome__text--black {
+  color: #222831;
+}
+
+.welcome__text--gray {
+  color: #393E46;
+}
+
+.welcome__text--big {
+  font-size: min(50px, 7vw);
+} 
+
+.welcome__text--small {
+  font-size: min(15px, 2vw);
+}
+
+
+
+.navigation {
+  margin: min(20px, 5vw);
+  margin-left: 15vw;
+  margin-right: 15vw;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 5vw;
+}
+
+.navigation__text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.navigation__text {
+  text-align: center;
+  font-family: monospace;
+
+  font-size: min(20px, 2vw);
+  color: #393E46;
+}
+
+.navigation__button-container {
+  display:flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+
+.navigation__button {
   padding: 5px min(15px, 1vw);
   width: 100%;
 
@@ -12,59 +80,3 @@
   border-radius: 4px;
   cursor: pointer;
 }
-
-.NavContainer {
-  margin: min(20px, 5vw);
-  margin-left: 15vw;
-  margin-right: 15vw;
-
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: 5vw;
-}
-
-.NavButton {
-  display:flex;
-  flex-direction: column;
-  justify-content: space-around;
-}
-
-.NavText {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  justify-content: center;
-
-  text-align: center;
-  font-family: monospace;
-
-  font-size: min(20px, 2vw);
-  color: #393E46;
-}
-
-.WelcomeText {
-  margin-top: 10vw;
-  margin-left: 10vw;
-  margin-right: 10vw;
-
-  display:flex;
-  flex-direction: column;
-  align-items: center;
-
-  width: 80%;
-
-  text-align: center;
-  font-family: monospace;
-}
-
-.WelcomeText-big {
-  font-size: min(50px, 7vw);
-  color: #222831;
-}
-
-.WelcomeText-small {
-  font-size: min(15px, 2vw);
-  color: #393E46;
-}
-
