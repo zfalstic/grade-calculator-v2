@@ -60,6 +60,22 @@ export default function Final() {
     setResults(newResults);
   }
 
+  const removeThatField = (index: number, event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    let newFields: IClass[] = [...inputFields];
+    let newResults: string[] = [...results];
+
+    event.preventDefault();
+
+    const fieldIndex = newFields.indexOf(newFields[index], 0);
+    const resultIndex = newResults.indexOf(newResults[index], 0);
+
+    newFields.splice(fieldIndex, 1);
+    newResults.splice(resultIndex, 1);
+
+    setInputFields(newFields);
+    setResults(newResults);
+  }
+
   const parseFields = () => {
     const currInputFields: IClass[] = [...inputFields];
     let currResults: string[] = [...results];
@@ -163,10 +179,11 @@ export default function Final() {
           return (
             <div className='form__entry' key={index + 1}>
               <label className='form__label'>
-                <input className='form__input' type='text' name='sem1Grade' placeholder='Semester 1' value={input.sem1Grade} onChange={event => handleFormChange(index, event)} />
-                <input className='form__input' type='text' name='sem2Grade' placeholder='Semester 2' value={input.sem2Grade} onChange={event => handleFormChange(index, event)} />
-                <input className='form__input' type='text' name='examWeight' placeholder='Exam weight(%)' value={input.examWeight} onChange={event => handleFormChange(index, event)} />
-                <input className='form__input' type='text' name='targetGrade' placeholder='Target grade' value={input.targetGrade} onChange={event => handleFormChange(index, event)} />
+                <button className='form__delete' onClick={event => removeThatField(index, event)}></button>
+                <input className='form__input form__input--semester' type='text' name='sem1Grade' placeholder='Semester 1' value={input.sem1Grade} onChange={event => handleFormChange(index, event)} />
+                <input className='form__input form__input--semester' type='text' name='sem2Grade' placeholder='Semester 2' value={input.sem2Grade} onChange={event => handleFormChange(index, event)} />
+                <input className='form__input form__input--weight' type='text' name='examWeight' placeholder='Exam weight(%)' value={input.examWeight} onChange={event => handleFormChange(index, event)} />
+                <input className='form__input form__input--target' type='text' name='targetGrade' placeholder='Target grade' value={input.targetGrade} onChange={event => handleFormChange(index, event)} />
                 <b className='form__result'>{results[index]}</b>
               </label>
             </div> 
