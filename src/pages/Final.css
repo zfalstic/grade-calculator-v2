@@ -59,6 +59,44 @@
   box-sizing: border-box;
 }
 
+.form__input--semester {
+  width: min(150px, 16vw);
+}
+
+.form__input--weight, .form__input--target {
+  width: min(150px, 20vw);
+}
+
+.form__delete {
+  margin-right: min(5px, 0.5vw);
+
+  width: min(20px, 2.5vw) !important;
+  height: min(20px, 2.5vw) !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+
+  text-align: center;
+  padding: 0px;
+  font-size:12px;
+
+  border: none;
+  border-radius: 0.2vw;
+  color: lightcoral;
+  background-color: lightcoral;
+
+  cursor: pointer;
+}
+
+.form__delete:hover {
+  color: rgb(225, 87, 87);
+  background-color: rgb(225, 87, 87);
+}
+
+/* .form__delete:hover {
+  background-color: lightcoral;
+  color: lightcoral;
+} */
+
 .form__result {
   margin-left: 0.2vw;
   display: inline;
