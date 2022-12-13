@@ -5,7 +5,7 @@ import './Home.css'
 
 export default function Home() {
   return (
-    <div>
+    <div className='home'>
       <div className='welcome'>
         <p className='welcome__text welcome__text--big welcome__text--black'>Welcome to <em>this</em> grade calculator</p>
         <p className='welcome__text welcome__text--small welcome__text--gray'>I really don't know why I made this</p>
@@ -19,6 +19,11 @@ export default function Home() {
           <Link to='/grade-calculator-v2/average'><button className='navigation__button'>Class Average Calculator</button></Link>
           <Link to='/grade-calculator-v2/final'><button className='navigation__button'>Final Calculator</button></Link>
         </div>        
+      </div>
+      <div className='trademark'>
+        <div className='trademark__text'>
+          <p>made by @zfalstic</p>
+        </div>
       </div>
     </div>
   );

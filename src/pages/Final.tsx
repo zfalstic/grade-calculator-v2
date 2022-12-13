@@ -37,7 +37,7 @@ export default function Final() {
 
     data[index][eventName] = inputValue;
 
-    console.log(data);
+    //console.log(data);
     setInputFields(data);
   }
 
@@ -103,6 +103,8 @@ export default function Final() {
 
       if(!isNaN(+curr.examWeight) && curr.examWeight.charAt(0) === '0' && curr.examWeight.charAt(1) === '.') {
         currNum.examWeight = parseFloat(curr.examWeight);
+      } else if(!isNaN(+curr.examWeight) && curr.examWeight.charAt(0) === '.') {
+        currNum.examWeight = parseFloat(curr.examWeight);
       } else if(!isNaN(+curr.examWeight)) {
         currNum.examWeight = parseFloat(curr.examWeight) / 100;
       } else if(curr.examWeight.charAt(curr.examWeight.length - 1) === '%' && curr.examWeight.substring(0, curr.examWeight.length - 1)) {
@@ -125,7 +127,7 @@ export default function Final() {
       const n = calculateFinal(currNum);
       currResults[i] = (Math.round(n * 100) / 100).toString();
 
-      console.log(currResults[i]);
+      //console.log(currResults[i]);
     }
 
     setResults(currResults);
@@ -146,27 +148,26 @@ export default function Final() {
 
     parseFields();
 
-    console.log(inputFields);
+    //console.log(inputFields);
   }
 
   return (
-    <div className='Grades'>
-      <div className='Buttons'>
-        <button onClick={addField}>Add another period</button>
-        <button onClick={removeField}>Remove a period</button>
-        <button onClick={submit}>Calculate</button>
+    <div className='final'>
+      <div className='controls'>
+        <button className='controls__button' onClick={addField}>Add another period</button>
+        <button className='controls__button' onClick={removeField}>Remove a period</button>
+        <button className='controls__button' onClick={submit}>Calculate</button>
       </div>
-      <form onSubmit={submit}>
+      <form className='form' onSubmit={submit}>
         {inputFields.map((input, index) => {
           return (
-            <div key={index + 1}>
-              <label>
-                Class {index + 1}:
-                <input type='text' name='sem1Grade' placeholder='Semester 1' value={input.sem1Grade} onChange={event => handleFormChange(index, event)} />
-                <input type='text' name='sem2Grade' placeholder='Semester 2' value={input.sem2Grade} onChange={event => handleFormChange(index, event)} />
-                <input type='text' name='examWeight' placeholder='Exam weight' value={input.examWeight} onChange={event => handleFormChange(index, event)} />
-                <input type='text' name='targetGrade' placeholder='Target grade' value={input.targetGrade} onChange={event => handleFormChange(index, event)} />
-                <b className='result'>{results[index]}</b>
+            <div className='form__entry' key={index + 1}>
+              <label className='form__label'>
+                <input className='form__input' type='text' name='sem1Grade' placeholder='Semester 1' value={input.sem1Grade} onChange={event => handleFormChange(index, event)} />
+                <input className='form__input' type='text' name='sem2Grade' placeholder='Semester 2' value={input.sem2Grade} onChange={event => handleFormChange(index, event)} />
+                <input className='form__input' type='text' name='examWeight' placeholder='Exam weight(%)' value={input.examWeight} onChange={event => handleFormChange(index, event)} />
+                <input className='form__input' type='text' name='targetGrade' placeholder='Target grade' value={input.targetGrade} onChange={event => handleFormChange(index, event)} />
+                <b className='form__result'>{results[index]}</b>
               </label>
             </div> 
           )
