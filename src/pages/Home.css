@@ -5,7 +5,7 @@
 .welcome {
   margin-top: 10vw;
 
-  display:flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
 }
@@ -20,18 +20,16 @@
 }
 
 .welcome__text--gray {
-  color: #393E46;
+  color: #393e46;
 }
 
 .welcome__text--big {
   font-size: min(50px, 7vw);
-} 
+}
 
 .welcome__text--small {
   font-size: min(15px, 2vw);
 }
-
-
 
 .navigation {
   margin: min(20px, 5vw);
@@ -56,15 +54,14 @@
   font-family: monospace;
 
   font-size: min(20px, 2vw);
-  color: #393E46;
+  color: #393e46;
 }
 
 .navigation__button-container {
-  display:flex;
+  display: flex;
   flex-direction: column;
   justify-content: space-around;
 }
-
 
 .navigation__button {
   padding: 5px min(15px, 1vw);
@@ -73,14 +70,13 @@
   font-family: monospace;
   font-size: min(20px, 2vw);
 
-  background-color: #00ADB5;
-  color: #393E46;
-  
+  background-color: #00adb5;
+  color: #393e46;
+
   border: none;
   border-radius: 4px;
   cursor: pointer;
 }
-
 
 .trademark {
   display: flex;

@@ -13,15 +13,13 @@
   font-family: monospace;
   font-size: min(15px, 2vw);
 
-  background-color: #00ADB5;
-  color: #393E46;
-  
+  background-color: #00adb5;
+  color: #393e46;
+
   border: none;
   border-radius: 4px;
   cursor: pointer;
 }
-
-
 
 .form {
   margin-top: 10px;
@@ -53,7 +51,7 @@
 
   display: inline-block;
 
-  border: 1px solid #CCC;
+  border: 1px solid #ccc;
   border-radius: 4px;
 
   box-sizing: border-box;
@@ -63,7 +61,8 @@
   width: min(150px, 16vw);
 }
 
-.form__input--weight, .form__input--target {
+.form__input--weight,
+.form__input--target {
   width: min(150px, 20vw);
 }
 
@@ -77,7 +76,7 @@
 
   text-align: center;
   padding: 0px;
-  font-size:12px;
+  font-size: 12px;
 
   border: none;
   border-radius: 0.2vw;
