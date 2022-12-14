@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import './Final.css'
 
-import calculateFinal from '../scripts/final';
+import { parseInput } from '../scripts/final';
 
-interface IClass {
+export interface IClass {
   sem1Grade: string;
   sem2Grade: string;
   examWeight: string;
@@ -79,74 +79,12 @@ export default function Final() {
   const parseFields = () => {
     const currInputFields: IClass[] = [...inputFields];
     let currResults: string[] = [...results];
-    let errors = new Set<number>();
 
-    for(let i = 0; i < currInputFields.length; i++) {
-      let curr = {...currInputFields[i]};
-
-      if(curr.sem1Grade === '' || curr.sem2Grade === '' || curr.examWeight === '' || curr.targetGrade === '') {
-        errors.add(i + 1);
-        continue;
-      }
-
-      let currNum: IClassNum = {
-        sem1Grade: Number.MAX_SAFE_INTEGER,
-        sem2Grade: Number.MAX_SAFE_INTEGER,
-        examWeight: Number.MAX_SAFE_INTEGER,
-        targetGrade: Number.MAX_SAFE_INTEGER
-      }; 
-
-      if(!isNaN(+curr.sem1Grade)) {
-        currNum.sem1Grade = parseFloat(curr.sem1Grade);
-      } else {
-        errors.add(i + 1);
-        continue;
-      }
-
-      if(!isNaN(+curr.sem2Grade)) {
-        currNum.sem2Grade = parseFloat(curr.sem2Grade);
-      } else {
-        errors.add(i + 1);
-        continue;
-      }
-
-      if(!isNaN(+curr.targetGrade)) {
-        currNum.targetGrade = parseFloat(curr.targetGrade);
-      } else {
-        errors.add(i + 1);
-        continue;
-      }
-
-      if(!isNaN(+curr.examWeight) && curr.examWeight.charAt(0) === '0' && curr.examWeight.charAt(1) === '.') {
-        currNum.examWeight = parseFloat(curr.examWeight);
-      } else if(!isNaN(+curr.examWeight) && curr.examWeight.charAt(0) === '.') {
-        currNum.examWeight = parseFloat(curr.examWeight);
-      } else if(!isNaN(+curr.examWeight)) {
-        currNum.examWeight = parseFloat(curr.examWeight) / 100;
-      } else if(curr.examWeight.charAt(curr.examWeight.length - 1) === '%' && curr.examWeight.substring(0, curr.examWeight.length - 1)) {
-        currNum.examWeight = parseFloat(curr.examWeight.substring(0, curr.examWeight.length - 1)) / 100;
-      } else {
-        errors.add(i + 1);
-        continue;
-      }
-
-      if(
-        currNum.sem1Grade === Number.MAX_SAFE_INTEGER ||
-        currNum.sem2Grade === Number.MAX_SAFE_INTEGER || 
-        currNum.examWeight === Number.MAX_SAFE_INTEGER || 
-        currNum.targetGrade === Number.MAX_SAFE_INTEGER
-      ) {
-        errors.add(i + 1);
-        continue;
-      }
-
-      const n = calculateFinal(currNum);
-      currResults[i] = (Math.round(n * 100) / 100).toString();
-
-      //console.log(currResults[i]);
-    }
+    let result: [string[], Set<number>] = parseInput(currInputFields, currResults)
+    currResults = result[0];
 
     setResults(currResults);
+    let errors = result[1];
 
     errors.forEach(i => {
       alert(`Error processing period ${i}`);
@@ -170,7 +108,7 @@ export default function Final() {
   return (
     <div className='final'>
       <div className='controls'>
-        <button className='controls__button' onClick={addField}>Add another period</button>
+        <button className='controls__button' onClick={addField}>Add a period</button>
         <button className='controls__button' onClick={removeField}>Remove a period</button>
         <button className='controls__button' onClick={submit}>Calculate</button>
       </div>
